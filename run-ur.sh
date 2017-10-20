@@ -40,12 +40,12 @@ compile_manhout(){
   if [[ ! $(ls $DEPENDENCIES_LIB | grep -cE ".*${1:0:4}.*.jar") -eq 4 ]];
   then
       echo "EXECUTING: mvn -Pscala-${1:0:4} -Pspark-${2:0:3} clean install -DskipTests"
-      /tmp/apache-maven-3.5.0/bin/mvn -Pscala-${1:0:4} -Pspark-${2:0:3} clean install -DskipTests #THIS LINE NOT WORK IF SCALA VERSION IS UNDER 2.10; eg: 2.9.x
+      mvn -Pscala-${1:0:4} -Pspark-${2:0:3} clean install -DskipTests #THIS LINE NOT WORK IF SCALA VERSION IS UNDER 2.10; eg: 2.9.x
       execution_result
       cp -pf *.jar "${DEPENDENCIES_LIB}/"
   fi
  
-  PIO_MAHOUT_VERSION=$(/tmp/apache-maven-3.5.0/bin/mvn help:evaluate -Dexpression=project.version | grep -v "^\[" | sed -E 's/(.*)(-.*)/\1/')
+  PIO_MAHOUT_VERSION=$(mvn help:evaluate -Dexpression=project.version | grep -v "^\[" | sed -E 's/(.*)(-.*)/\1/')
   
   popd
 }
