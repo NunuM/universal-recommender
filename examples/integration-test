@@ -62,7 +62,7 @@ python examples/import_handmade.py --access_key $ACCESS_KEY --file data/sample-h
 echo ""
 echo "Building and delpoying model"
 pio build
-pio train  -- --driver-memory 4g --executor-memory 4g
+pio train  -- --driver-memory 6g --executor-memory 6g
 echo "Model will remain deployed after this test"
 nohup pio deploy > deploy.out &
 echo "Waiting 30 seconds for the server to start"
