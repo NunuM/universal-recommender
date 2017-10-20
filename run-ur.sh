@@ -108,7 +108,7 @@ then
  cp -vfp "${SCRIPTPATH}/patches/scala${PIO_SCALA_VERSION:0:4}/es${PIO_ELASTIC_VERSION:0:1}/build.sbt" build.sbt
  execution_result # CANNOT EXISTS FOR OTHER ES VERSION THAN 1.x.x or 5.x.x
 
- if [[ "${PIO_ELASTIC_VERSION:0:1}"="5" ]];
+ if [[ "${PIO_ELASTIC_VERSION:0:1}" -eq 5 ]];
  then
     cp -vfp "${SCRIPTPATH}/patches/scala${PIO_SCALA_VERSION:0:4}/es${PIO_ELASTIC_VERSION:0:1}/EsClient.scala" ${SCRIPTPATH}/src/main/scala
     execution_result

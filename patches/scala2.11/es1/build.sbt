@@ -22,7 +22,7 @@ scalaVersion := sys.env.getOrElse("PIO_SCALA_VERSION","2.11.8")
 //val elasticsearch5Version = "5.1.2"
 libraryDependencies ++= Seq(
   "org.apache.predictionio" %% "apache-predictionio-core" % pioVersion % "provided",
-  "org.apache.predictionio" %% "apache-predictionio-data-elasticsearch" % pioVersion  % "provided",
+  "org.apache.predictionio" % "apache-predictionio-data-elasticsearch1_2.11" % "0.11.0-incubating" % "provided",
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   "org.apache.spark" %% "spark-mllib" % sparkVersion % "provided",
   "org.xerial.snappy" % "snappy-java" % "1.1.1.7",
@@ -44,8 +44,7 @@ libraryDependencies ++= Seq(
     exclude("xmlpull", "xmlpull"),
   // possible build for es5 
   //"org.elasticsearch"       %% "elasticsearch-spark-13" % elasticsearch5Version % "provided",
-  "org.elasticsearch" % "elasticsearch" % elasticsearch1Version % "provided",
-  "org.elasticsearch.client" % "transport" % elasticsearch1Version,
+  "org.elasticsearch" % "elasticsearch" % elasticsearch1Version,
   "org.elasticsearch" % "elasticsearch-spark-20_2.11" % "5.4.1"
     exclude("org.apache.spark", "spark-catalyst_2.11")
     exclude("org.apache.spark", "spark-sql_2.11"),
