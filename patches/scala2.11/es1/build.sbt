@@ -14,7 +14,7 @@ val pioVersion = sys.env.getOrElse("PIO_VERSION","0.12.0-incubating")
 
 val elasticsearch1Version = sys.env.getOrElse("PIO_ELASTIC_VERSION","1.7.5")
 
-val sparkVersion = sys.env.getOrElse("PIO_SPARK_VERSION","1.4.0")
+val sparkVersion = sys.env.getOrElse("PIO_SPARK_VERSION","2.1.0")
 
 scalaVersion := sys.env.getOrElse("PIO_SCALA_VERSION","2.11.8")
 
