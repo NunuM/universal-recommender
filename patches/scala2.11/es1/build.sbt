@@ -44,7 +44,7 @@ libraryDependencies ++= Seq(
     exclude("xmlpull", "xmlpull"),
   // possible build for es5 
   //"org.elasticsearch"       %% "elasticsearch-spark-13" % elasticsearch5Version % "provided",
-  "org.elasticsearch" % "elasticsearch" % elasticsearch1Version,
+  "org.elasticsearch" % "elasticsearch" % elasticsearch1Version % "provided",
   "org.elasticsearch" % "elasticsearch-spark-20_2.11" % "5.4.1"
     exclude("org.apache.spark", "spark-catalyst_2.11")
     exclude("org.apache.spark", "spark-sql_2.11"),
